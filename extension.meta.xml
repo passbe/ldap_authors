@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension id="ldap_authors" status="released" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+	<name>LDAP Authors</name>
+	<description>Allows LDAP users to login to the administration section of symphony.</description>
+	<repo type="github">https://github.com/passbe/ldap_authors</repo>
+	<url type="discuss">http://symphony-cms.com/discuss/thread/78495/</url>
+	<types>
+		<type>Membership</type>
+	</types>
+	<authors>
+		<author>
+			<name github="passbe" symphony="passbe">Ben Passmore</name>
+                        <email>contact@passbe.com</email>
+			<website>http://www.passbe.com</website>
+		</author>
+	</authors>
+	<releases>
+		<release version="0.3" date="2011-10-05" min="2.2.3" />
+	</releases>
+</extension>
