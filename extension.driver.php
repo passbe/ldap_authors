@@ -39,6 +39,7 @@ class extension_ldap_authors extends Extension {
          Symphony::Configuration()->set('protocol_version', 3, 'ldap_authors');
          Symphony::Configuration()->set('basedn', 'ou=Company,dc=domain', 'ldap_authors');
          Symphony::Configuration()->set('filterdn', 'cn=%username%', 'ldap_authors');
+         Symphony::Configuration()->set('details_basedn', 'ou=Company,dc=domain', 'ldap_authors');
          Symphony::Configuration()->set('first_name_key', 'givenname', 'ldap_authors');
          Symphony::Configuration()->set('last_name_key', 'sn', 'ldap_authors');
          Symphony::Configuration()->set('email_key', 'mail', 'ldap_authors');
@@ -83,7 +84,8 @@ class extension_ldap_authors extends Extension {
                      return true;
                   } else {
                      //New LDAP user, we need to insert their details in the authors table
-                     $ldap_user = $this->ldap_retrieve_user($ldap, $basedn, $filterdn);
+                     $detailsdn = (is_null(Symphony::Configuration()->get('details_basedn', 'ldap_authors')) ? $basedn : Symphony::Configuration()->get('details_basedn', 'ldap_authors');
+                     $ldap_user = $this->ldap_retrieve_user($ldap, $detailsdn, $filterdn);
                      if ($ldap_user) {
                         //Get attributes and insert data
                         $attrs = array(Symphony::Configuration()->get('first_name_key', 'ldap_authors'), Symphony::Configuration()->get('last_name_key', 'ldap_authors'), Symphony::Configuration()->get('email_key', 'ldap_authors'));

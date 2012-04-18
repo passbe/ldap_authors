@@ -1,6 +1,6 @@
 # LDAP Authors 
 
-* Version: 0.3
+* Version: 0.4
 * Author: [Ben Passmore](http://www.passbe.com)
 * Build Date: 2011-10-05
 * Requirements: Symphony 2.2.3
@@ -17,7 +17,8 @@ Allows LDAP users to login to the administration section of symphony. If an admi
 * `server` the LDAP server IP or Hostname. e.g. `ldap.example.com`
 * `port` the LDAP server's port. Defaults to `389`
 * `protocol_version` the LDAP protocol version. Defaults to version `3`
-* `basedn` the Basedn path for your LDAP environment
+* `basedn` the Basedn path for your LDAP environment [Authentication Lookup]
+* `details_basedn` the Basedn path for your LDAP environment [User Details Lookup]. (Optional - if not specified defaults to `basedn`)
 * `filterdn` the filter path for LDAP user lookup. e.g. `cn=%username%`. Note: this string must contain `%username%` to search for the target user
 * `first_name_key` the users first name LDAP key. e.g. `givenname`
 * `last_name_key` the users last name LDAP key. e.g. `sn`

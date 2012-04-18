@@ -15,6 +15,9 @@
 		</author>
 	</authors>
 	<releases>
+                <release version="0.4" date="2012-04-18" min="2.2.3">
+                    Added secondary BaseDN configuration, as suggested by 'neildarlow' @ http://symphony-cms.com/discuss/thread/78453/.
+                </release>
 		<release version="0.3" date="2011-10-05" min="2.2.3" />
 	</releases>
 </extension>
